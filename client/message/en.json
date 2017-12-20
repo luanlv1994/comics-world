@@ -1,0 +1,13 @@
+{
+  "home": {
+    "title":"Hello"
+  },
+  "nav":{
+    "home":"Home"
+  },
+  "gender":{
+    "female":"female",
+    "male":"male",
+    "other":"other"
+  }
+}

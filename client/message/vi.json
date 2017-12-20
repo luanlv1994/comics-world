@@ -1,0 +1,46 @@
+{
+  "common": {
+    "new":"Mới",
+    "viewall":"Xem tất cả",
+    "search":"Nhập từ khóa tìm kiếm",
+    "number.of.line.in.table":"Tổng số/trang",
+    "sum.result":"Tổng số",
+    "save":"Lưu",
+    "close":"Đóng"
+  },
+  "home": {
+    "title":"Thanh Tam"
+  },
+  "nav":{
+    "home":"Trang chủ"
+  },
+  "header":{
+    "notification":{
+      "title":"Thông báo"
+    },
+    "message":{
+      "title":"Tin nhắn"
+    },
+    "infor":{
+      "update":"Cập nhật hồ sơ",
+      "email":"Hộp thư",
+      "job":"Công việc",
+      "calender":"Lịch",
+      "logout":"Đăng xuất"
+    }
+  },
+  "footer":{
+    "copyright":"Copyright &copy; 2017",
+    "author":"TamDT&nbsp;",
+    "reserved":",All rights reserved.",
+    "caption":"Life & Lines code"
+  },
+  "gender":{
+    "female":"Nữ",
+    "male":"Nam",
+    "other":"Khác"
+  },
+  "user":{
+    "title.create":"Thêm mới tài khoản"
+  }
+}
