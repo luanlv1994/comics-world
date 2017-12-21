@@ -4,7 +4,7 @@
 app.controller('AuthorCtrl', function ($scope, $modalInstance, $state, $modal,$filter) {
 
     function init() {
-        $scope.title = $filter('translate')('user.title.create');
+        $scope.title = $filter('translate')('user.title.infor');
 
     }
 

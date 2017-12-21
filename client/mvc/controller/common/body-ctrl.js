@@ -234,7 +234,7 @@ app.controller('myCtrl', function ($rootScope, $scope, $translate, $modal) {
         var modalInstance = $modal.open({
             templateUrl: detailTemplate,
             controller: detailCtrl,
-            windowClass: 'app-modal-window-60',
+            windowClass: 'app-modal-window-85',
             size: 'lg',
             resolve: {}
         });
@@ -250,13 +250,13 @@ app.controller('myCtrl', function ($rootScope, $scope, $translate, $modal) {
         if (value === 3) {
             $scope.isFullscreen = !$scope.isFullscreen;
         } else if (value === 1) {
-            var is_collapsed = $(".btn").css("margin-right") == slider_width + "px" && !$(this).is(':animated');
+            var is_collapsed = $(".btn").css("margin-left") == slider_width + "px" && !$(this).is(':animated');
             var sign = (is_collapsed) ? '-' : '+';
 
             if (!$(this).is(':animated')) //prevent double margin on double click
             {
-                if (easing) $('.willSlide').animate({"margin-right": sign + '=' + slider_width}, animation_speed, easing_effect);
-                else $('.willSlide').animate({"margin-right": sign + '=' + slider_width}, animation_speed);
+                if (easing) $('.willSlide').animate({"margin-left": sign + '=' + slider_width}, animation_speed, easing_effect);
+                else $('.willSlide').animate({"margin-left": sign + '=' + slider_width}, animation_speed);
             }
             (is_collapsed) ? $('.willSlide').removeClass('expanded') : $('.willSlide').addClass('expanded');
         }

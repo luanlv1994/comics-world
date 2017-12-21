@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="common/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/imageviewer.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/style.css">
 
 </head>
 <body ng-controller="myCtrl">
@@ -19,21 +20,7 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        <!--<div class="navbar-header">-->
-            <!--<a class="navbar-brand" href="#">Logo</a>-->
-        <!--</div>-->
-        <!--<ul class="nav navbar-nav">-->
-            <!--<li class="dropdown">-->
-                <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Game-->
-                    <!--<span class="caret"></span>-->
-                <!--</a>-->
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li><a href="#">Page 1-1</a></li>-->
-                    <!--<li><a href="#">Page 1-2</a></li>-->
-                    <!--<li><a href="#">Page 1-3</a></li>-->
-                <!--</ul>-->
-            <!--</li>-->
-        <!--</ul>-->
+        <div class="story-page header-title">Trainee for the God of Death</div>
         <ul class="nav navbar-nav navbar-right">
             <li>
                 <a ng-click="author()">
@@ -47,7 +34,7 @@
 
 <div class="container-fluid c-body">
     <div class="menu-right">
-        <div class="willSlide" id="content">
+        <div class="willSlide" id="content" style="margin-top: 70px!important;">
             <div class="story-item" ng-repeat="sItem in images">
                 <a class="item-image" ng-click="setCurrentImage($index)">
                     <img ng-src="{{images[$index].big}}" alt=""ng-class="{picking:$index==currentIndex}">
@@ -67,7 +54,7 @@
         <div class="story-pre">
             <a ng-click="previousImage()"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
         </div>
-        <div class="story-content" id="story-content" fullscreen="isFullscreen">
+        <div class="story-content" id="story-content" fullscreen="isFullscreen" ng-class="{fullscren:isFullscreen}">
             <div class="story-img"></div>
         </div>
         <div class="story-next">
@@ -77,43 +64,43 @@
     <div class="row text-center r-page">
         <span class="story-page">{{currentIndex}}/{{total}}</span>
     </div>
-    <div class="container row text-right">
-        <ul class="list-inline to-page">
-            <li><a ng-click="pickEnd1Choice()" title="Kết thúc 1"><i class="fa fa-hand-o-left" aria-hidden="true"></i></a></li>
-            <li><a ng-click="pickEnd2Choice()" title="Kết thúc 2"><i class="fa fa-hand-o-right" aria-hidden="true"></i></a></li>
-        </ul>
-    </div>
+    <!--<div class="container row text-right">-->
+        <!--<ul class="list-inline to-page">-->
+            <!--<li><a ng-click="pickEnd1Choice()" title="Kết thúc 1"><i class="fa fa-hand-o-left" aria-hidden="true"></i></a></li>-->
+            <!--<li><a ng-click="pickEnd2Choice()" title="Kết thúc 2"><i class="fa fa-hand-o-right" aria-hidden="true"></i></a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
 </div>
 
 <footer></footer>
 
 <style>
+    .fullscren{background: url(image/bg.jpg)}
     body{background: url(image/bg.jpg) center center no-repeat; background-size: cover;height: 100vh;overflow: hidden}
-    .img-c{width: 60%;margin: 0 auto;margin-top: 5%;border: 5px solid #19375f;height: 500px}
-    .story-content{float: left;width:100%;height: 490px}
+    .img-c{width: 50%;margin: 0 auto;margin-top: 5%;border: 5px solid #19375f;height: 600px;}
+    .story-content{float: left;width:100%;height: 590px}
     .r-page{float: left;width: 100%;margin-top: 10px}
     .story-page{color: #fff;font-weight: bold;font-size: 18px;}
     .story-pre a i{font-size: 50px;color: #fff;margin-top: 20%;float: left;margin-left: -25px}
     .story-next a i{font-size: 50px;color: #fff;margin-top: 20%;float: right;margin-right: -25px}
     .story-item{float: left;width: 100%;}
-    .story-item img{float: left;width: 198px; border: 1px solid yellow;margin-top: 5px}
+    .story-item img{float: left;width: 187px; border: 1px solid yellow;margin-top: 5px}
     .picking{border: 5px solid yellow !important;}
     .item-image{width: 80%;height: 20px}
     .to-page li a i{font-weight: bold;font-size: 20px;color: #fff}
     .custom-story-page{text-align: center}
-
+.header-title{text-align: center;    padding-top: 10px;}
+    .navbar-nav{    margin: -15px!important;}
     .menu-right{}
     #content{
         position:fixed;
         height:100%;
-        width:200px;
-        right:0px;
-        margin-right: -200px;
+        width:215px;
+        margin-left: -229px;
         overflow-y: auto;
     }
     .btn{
         position: fixed;
-        right: 0px;
         /*background: #47576f;*/
         top: 25%;
         /*border-radius: 5px 0px 0 5px;*/
