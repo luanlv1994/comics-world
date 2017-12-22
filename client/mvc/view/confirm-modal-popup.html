@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+    <h3 class="modal-title"><label>{{ title | translate }}</label></h3>
+</div>
+<div class="modal-body" style="overflow: auto"  vt-modal-window="">
+    <form name="form">
+        <h2><div>{{ message | translate}}</div></h2>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button class=" btn-primary btn-sm btn-icon mr5" ng-click="confirm()">
+        <span class="fa fa-check"> </span> Grandma
+    </button>
+
+    <button class=" btn-warning btn-sm btn-icon mr5" ng-click="cancel()" autofocus>
+        <span class="fa fa-check"> </span> Susan
+    </button>
+</div>

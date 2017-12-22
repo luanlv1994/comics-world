@@ -7,7 +7,8 @@ app.controller('myCtrl', function ($rootScope, $scope, $translate, $modal) {
     var animation_speed = 500;
 
     var slider_width = $('#content').width();//get width automaticly
-
+    var slider_width1 = $('#content1').width();//get width automaticly
+    $scope.is_collapsed = true;
     function init() {
         $scope.lstLanguage = [];
         $scope.page = [];
@@ -211,6 +212,7 @@ app.controller('myCtrl', function ($rootScope, $scope, $translate, $modal) {
     $scope.setCurrentImage = function (index) {
         $scope.currentIndex = index;
         $scope.showImage();
+        $scope.showPopup();
     }
     $scope.pickEnd1Choice = function (index) {
         $scope.currentIndex = 29;
@@ -252,21 +254,56 @@ app.controller('myCtrl', function ($rootScope, $scope, $translate, $modal) {
         ];
     }
 
-    $scope.author = function () {
-        var detailTemplate = "mvc/view/author/author.html";
-        var detailCtrl = 'AuthorCtrl';
+    $scope.showPopup = function () {
+        var detailTemplate = "mvc/view/confirm-modal-popup.html";
+        var detailCtrl = 'ConfirmModalPopupCtrl';
         var modalInstance = $modal.open({
             templateUrl: detailTemplate,
             controller: detailCtrl,
-            windowClass: 'app-modal-window-85',
+            windowClass: 'app-modal-window-30',
             size: 'lg',
             resolve: {}
         });
 
-        modalInstance.result.then(function () {
-
+        modalInstance.result.then(function (data) {
+        if(data=='1')
+        $scope.nextImage();
+        else if(data=='2')
+        $scope.jumpTo(39);
         }, function () {
         });
+    }
+    $scope.jumpTo = function(pageIndex){
+        if ($scope.currentIndex != 0) $scope.currentIndex=pageIndex;
+        $scope.showImage();
+        if ($scope.currentIndex == 36)$scope.showPopup();
+    }
+    $scope.author = function () {
+        //var detailTemplate = "mvc/view/author/author.html";
+        //var detailCtrl = 'AuthorCtrl';
+        //var modalInstance = $modal.open({
+        //    templateUrl: detailTemplate,
+        //    controller: detailCtrl,
+        //    windowClass: 'app-modal-window-85',
+        //    size: 'lg',
+        //    resolve: {}
+        //});
+        //
+        //modalInstance.result.then(function () {
+        //
+        //}, function () {
+        //});
+
+        $scope.is_collapsed = !$scope.is_collapsed
+        var is_collapsed = $scope.is_collapsed;
+        var sign = (is_collapsed) ? '-' : '+';
+
+        if (!$(this).is(':animated')) //prevent double margin on double click
+        {
+            if (easing) $('.willSlide1').animate({"margin-right": sign + '=' + slider_width1}, animation_speed, easing_effect);
+            else $('.willSlide1').animate({"margin-right": sign + '=' + slider_width1}, animation_speed);
+        }
+        (is_collapsed) ? $('.willSlide1').removeClass('expanded') : $('.willSlide1').addClass('expanded');
     }
 
 
@@ -296,11 +333,13 @@ app.controller('myCtrl', function ($rootScope, $scope, $translate, $modal) {
     $scope.previousImage = function () {
         if ($scope.currentIndex != 0) $scope.currentIndex--;
         $scope.showImage();
+        if ($scope.currentIndex == 36)$scope.showPopup();
     };
     $scope.nextImage = function () {
         $scope.currentIndex++;
         if ($scope.currentIndex > $scope.total) $scope.currentIndex = 1;
         $scope.showImage();
+        if ($scope.currentIndex == 36)$scope.showPopup();
     }
     $scope.showImage = function () {
         var imgObj = $scope.images[$scope.currentIndex];

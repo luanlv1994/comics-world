@@ -42,6 +42,13 @@
                 </a>
             </div>
         </div>
+        <div class="willSlide1" id="content1">
+            <div class="story-item1">
+                <a>
+                    <img ng-src="image/information.jpg" alt="">
+                </a>
+            </div>
+        </div>
         <div class="willSlide btn">
             <div class="story-btn" ng-repeat="bItem in lstBtn" ng-click="btnClick(bItem.value)">
                 <span class="click"><i class="{{bItem.icon}}" aria-hidden="true"></i></span>
@@ -79,6 +86,7 @@
     body{background: url(image/bg.jpg) center center no-repeat; background-size: cover;height: 100vh;overflow: hidden}
     .img-c{width: 50%;margin: 0 auto;margin-top: 5%;border: 5px solid #19375f;height: 600px;}
     .story-content{float: left;width:100%;height: 590px}
+    .story-item1{float: left;width: 100%;}
     .r-page{float: left;width: 100%;margin-top: 10px}
     .story-page{color: #fff;font-weight: bold;font-size: 18px;}
     .story-pre a i{font-size: 50px;color: #fff;margin-top: 20%;float: left;margin-left: -25px}
@@ -98,6 +106,16 @@
         width:215px;
         margin-left: -229px;
         overflow-y: auto;
+    }
+    #content1{
+        position:fixed;
+        height:100%;
+        background:rgb(97, 97, 97);
+        width:320px;
+        right:0px;
+        margin-right: -320px;
+        overflow-y: auto;
+        padding-top: 4.5%;
     }
     .btn{
         position: fixed;
@@ -150,6 +168,7 @@
 <script type="text/javascript" src="mvc/common.js"></script>
 <script type="text/javascript" src="mvc/controller/common/body-ctrl.js"></script>
 <script type="text/javascript" src="mvc/controller/author/author-ctrl.js"></script>
+<script type="text/javascript" src="mvc/controller/confirm-modal-popup-ctrl.js"></script>
 
 
 

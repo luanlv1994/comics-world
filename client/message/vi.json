@@ -42,5 +42,8 @@
   },
   "user":{
     "title.infor":"Thông tin tác giả"
-  }
+  },
+  "confirm.title":"Confirm",
+  "confirm.infor":"Who do you want to save?"
+
 }
