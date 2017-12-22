@@ -44,14 +44,6 @@ app.controller('myCtrl', function ($rootScope, $scope, $translate, $modal) {
                 big: 'image/truyen/4.jpg'
             },
             {
-                small: 'image/truyen/1.jpg',
-                big: 'image/truyen/1.jpg'
-            },
-            {
-                small: 'image/truyen/5.jpg',
-                big: 'image/truyen/5.jpg'
-            },
-            {
                 small: 'image/truyen/6.jpg',
                 big: 'image/truyen/6.jpg'
             },
@@ -166,6 +158,38 @@ app.controller('myCtrl', function ($rootScope, $scope, $translate, $modal) {
             {
                 small: 'image/truyen/34.jpg',
                 big: 'image/truyen/34.jpg'
+            },
+            {
+                small: 'image/truyen/35.jpg',
+                big: 'image/truyen/35.jpg'
+            },
+            {
+                small: 'image/truyen/36.jpg',
+                big: 'image/truyen/36.jpg'
+            },
+            {
+                small: 'image/truyen/37.jpg',
+                big: 'image/truyen/37.jpg'
+            },
+            {
+                small: 'image/truyen/38.jpg',
+                big: 'image/truyen/38.jpg'
+            },
+            {
+                small: 'image/truyen/39.jpg',
+                big: 'image/truyen/39.jpg'
+            },
+            {
+                small: 'image/truyen/40.jpg',
+                big: 'image/truyen/40.jpg'
+            },
+            {
+                small: 'image/truyen/41.jpg',
+                big: 'image/truyen/41.jpg'
+            },
+            {
+                small: 'image/truyen/42.jpg',
+                big: 'image/truyen/42.jpg'
             }
         ];
 
